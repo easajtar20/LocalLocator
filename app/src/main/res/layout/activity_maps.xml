@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        map:layout_constraintBottom_toTopOf="@+id/guideline_split_layout"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.0"
+        tools:context=".MapsActivity" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_split_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:orientation="horizontal"
+        map:layout_constraintGuide_begin="425dp" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchview_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginTop="72dp"
+        android:background="#BFBFBF"
+        android:elevation="5dp"
+        map:iconifiedByDefault="false"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.842"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="@+id/guideline_split_layout"
+        map:queryHint="@string/search_bar_hint" >
+
+    </androidx.appcompat.widget.SearchView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/searchview_address">
+
+        <ScrollView
+            android:id="@+id/scrollview_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textview_local"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/text_view_local_hint"
+                    android:textSize="30sp"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Scrolling"
+                    map:layout_constraintEnd_toEndOf="@+id/button_website"
+                    map:layout_constraintStart_toStartOf="@+id/button_website"
+                    map:layout_constraintTop_toBottomOf="@+id/button_website" />
+
+                <Button
+                    android:id="@+id/button_website"
+                    style=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="48dp"
+                    android:background="@drawable/rounded_corner"
+                    android:text="@string/button_website_default"
+                    android:textColor="@color/white"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toBottomOf="@+id/textview_local" />
+
+                <TextView
+                    android:id="@+id/textview_founded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/text_view_founded"
+                    map:layout_constraintEnd_toEndOf="@+id/textview_local"
+                    map:layout_constraintStart_toStartOf="@+id/textview_local"
+                    map:layout_constraintTop_toBottomOf="@+id/textview_local" />
+
+                <TextView
+                    android:id="@+id/textview_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="65dp"
+                    android:text="@string/text_view_number_default"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintTop_toBottomOf="@+id/textview_address" />
+
+                <TextView
+                    android:id="@+id/textview_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="45dp"
+                    android:text="@string/text_view_address_default"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintTop_toBottomOf="@+id/textview_local" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/button_toggle_locals"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/round_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/lightning"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"/>
+
+    <ImageButton
+        android:id="@+id/button_toggle_worksites"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/marker"
+        android:background="@color/clear"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/button_toggle_locals"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LocalLocator</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="search_bar_hint">Search Here</string>
+    <string name="button_website_default">Website</string>
+    <string name="text_view_local_hint">Click on a Local!</string>
+    <string name="text_view_address_default">123 Fake St.</string>
+    <string name="text_view_number_default">000-000-0000</string>
+    <string name="text_view_founded">Founded: 0000</string>
+</resources>
